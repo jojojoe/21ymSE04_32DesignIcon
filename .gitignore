@@ -1,0 +1,7 @@
+DIyMdesignIcon.xcodeproj/xcuserdata/
+DIyMdesignIcon.xcworkspace/
+Pods/
+*.swp
+Podfile.lock
+.DS_Store
+DIyMdesignIcon.xcodeproj/project.xcworkspace/xcuserdata/
