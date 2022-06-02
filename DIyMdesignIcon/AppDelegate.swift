@@ -11,7 +11,7 @@ import AppTrackingTransparency
 
 // com.iconforapp.novelfun
 // com.xinyu.test.888888
-let AppName: String = "Icon Kits"
+let AppName: String = "Get Likes+icon"
 let purchaseUrl = ""
 let TermsofuseURLStr = "https://www.app-privacy-policy.com/live.php?token=SKYB67zlXxoIvemWwI6yBloAgY0J2Bbc"
 let PrivacyPolicyURLStr = "https://daffy-hook.surge.sh/Facial_Privacy_Policy.html"

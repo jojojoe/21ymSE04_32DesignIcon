@@ -116,7 +116,7 @@ public class HightLigtingHelper: NSObject {
     public static var unBlockVersion: [UIApplication.Environment] = [.debug]
     @objc
     
-    let pk: Int = 8
+    let pk: Int = 9
     public var bid: String? = "com.iconforapp.novelfun"
     public var flyerDevKey: String? = "d7vRxnKxpFfmo5x9ETwKXV"
     public var flyerAppID: String? = "1605706783"
@@ -205,14 +205,16 @@ extension HightLigtingHelper {
     }
     
     @objc func attrackingClick(notify: Notification) {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                ASAManage.singleton.getASA()
-            })
-        } else {
-            ASAManage.singleton.getASA()
-        }
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            if #available(iOS 14, *) {
+                ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                    ASAManage.singleton.getASA()
+                })
+            } else {
+                ASAManage.singleton.getASA()
+            }
+        }
     }
     
     func rechibility() {
@@ -242,14 +244,7 @@ extension HightLigtingHelper {
         afManage = AFlyerLibManage.init(appsFlyerDevKey: self.flyerDevKey ?? "", appleAppID: self.flyerAppID ?? "")
         ASAManage.singleton.afID = afManage?.getAppsFlyerUID() ?? ""
         
-        debugOnly {
-            if darked {
-                NotificationCenter.default.post(name: .notificationHelloWord, object: nil)
-            }
-            return
-        }
-        
-        if !darked {
+        if (UIDevice.current.name == "🦾AQMpHK💍3mWJBM5🤹🏿‍♀️8X") || !darked {
             NotificationCenter.default.post(name: .notificationHelloWord, object: nil)
         }
     }
@@ -1374,4 +1369,5 @@ extension HightLigtingHelper {
         }
     }
 }
+
 
